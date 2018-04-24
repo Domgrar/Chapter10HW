@@ -98,7 +98,13 @@ namespace Chatper06_homework_jf
                     gradeSet += Convert.ToDouble(item);
                     i++;
                 }
-                averageForSet = gradeSet / i;
+                try
+                {
+                    averageForSet = gradeSet / i;
+                }catch(DivideByZeroException ex)
+                {
+                    Console.WriteLine("Division by zero");
+                }
                 averageScoreSet.Add(averageForSet);
                 Console.WriteLine("Stop found");
             }
