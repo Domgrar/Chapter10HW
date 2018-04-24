@@ -7,20 +7,22 @@ using System.Text;
 
 /// <summary>
 /// Jeremy Farmer
-/// 02-27-18
+/// C# Programming
+/// 04-24-2018
 /// 
 /// Programs takes user input for sets of grades then calculates out the final grade letter of the average
 /// of all sets combined
+/// NEW *** Implements exception handling to handle exceptions that may come up at runtime
 /// 
-/// *I apologize for this coding*
+/// 
 /// </summary>
-namespace Chatper06_homework_jf
+namespace Chapter10_homework_jf
 {
     class Program
     {
         static void Main(string[] args)
         {
-
+            //Convert.ToDouble("Hello");
             string newScore = "";
 
             ArrayList scoreDB = new ArrayList();
@@ -64,7 +66,14 @@ namespace Chatper06_homework_jf
 
                             foreach (object item in scoreDB)
                             {
-                                gradeSet += Convert.ToDouble(item);
+                                try
+                                {
+                                    gradeSet += Convert.ToDouble(item);
+                                }
+                                catch (FormatException)
+                                {
+                                    Console.WriteLine("Item couldn't be converted to a number value");
+                                }
                                 i++;
                             }
                             averageForSet = gradeSet / i;
@@ -95,15 +104,16 @@ namespace Chatper06_homework_jf
 
                 foreach (object item in scoreDB)
                 {
+                    
                     gradeSet += Convert.ToDouble(item);
                     i++;
                 }
                 try
                 {
                     averageForSet = gradeSet / i;
-                }catch(DivideByZeroException ex)
+                }catch(DivideByZeroException)       // Catch if a division by zero occurs
                 {
-                    Console.WriteLine("Division by zero");
+                    Console.WriteLine("Division by zero tried to occur");
                 }
                 averageScoreSet.Add(averageForSet);
                 Console.WriteLine("Stop found");
@@ -140,7 +150,14 @@ namespace Chatper06_homework_jf
 
                 //Display the total average of all sets
                 Console.WriteLine("Total average score is " + averageOfSets / numberOfSets);
-                Console.WriteLine("Your grade is an " + Grade.calculateLetterGrade(averageOfSets / numberOfSets));
+
+                try
+                {
+                    Console.WriteLine("Your grade is an " + Grade.calculateLetterGrade(averageOfSets / numberOfSets));
+                }catch(DivideByZeroException)   //Catch if a division by zero happens
+                {
+                    Console.WriteLine("Divide by zero error happened.");
+                }
 
                 Console.WriteLine("Exit program");
                 Console.ReadLine();

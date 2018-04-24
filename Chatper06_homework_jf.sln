@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatper06_homework_jf", "Chatper06_homework_jf\Chatper06_homework_jf.csproj", "{A82EC433-AC7A-48D1-A1F0-E612C394D493}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter10_Homework_jf", "Chatper06_homework_jf\Chapter10_Homework_jf.csproj", "{A82EC433-AC7A-48D1-A1F0-E612C394D493}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

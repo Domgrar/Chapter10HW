@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Chatper06_homework_jf
+namespace Chapter10_homework_jf
 {
     class Grade
     {
